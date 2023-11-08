@@ -3,9 +3,13 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Open the video capture
-cap = cv2.VideoCapture('OFrisbeeVid.mov', cv2.CAP_ANY)
+cap = cv2.VideoCapture('OFrisbeeV.mov', cv2.CAP_ANY)
 
 frame_counter = 0
+y1 = 0
+y2 = 0
+x1 = 0
+x2 = 0
 
 # Check if the video opened successfully
 if not cap.isOpened():
@@ -86,7 +90,7 @@ while True:
     cv2.imshow('Orange Frisbee Boxed', frame)
 
     # Exit the loop if the 'q' key is pressed
-    if cv2.waitKey(10) & 0xFF == ord('q'):
+    if cv2.waitKey(100) & 0xFF == ord('q'):
         break
 
 # Release the video capture and close all windows
