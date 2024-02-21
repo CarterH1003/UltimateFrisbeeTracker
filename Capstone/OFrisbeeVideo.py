@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Open the video capture
-cap = cv2.VideoCapture('OFrisbeeV.mov', cv2.CAP_ANY)
+cap = cv2.VideoCapture('LindenVid.mov', cv2.CAP_ANY)
 
 frame_counter = 0
 y1 = 0
@@ -17,8 +17,8 @@ if not cap.isOpened():
     exit()
 
 # Define the lower and upper bounds of the orange color in the HSV color space
-lower_orange = np.array([0, 75, 170])  # Lower bound of orange in HSV
-upper_orange = np.array([100, 255, 255])  # Upper bound of orange in HSV
+lower_orange = np.array([0, 80, 80])  # Lower bound of orange in HSV
+upper_orange = np.array([30, 255, 255])  # Upper bound of orange in HSV
 
 # Create a kernel for dilation (adjust the size if needed)
 kernel = np.ones((6, 6), np.uint8)
@@ -90,7 +90,7 @@ while True:
     cv2.imshow('Orange Frisbee Boxed', frame)
 
     # Exit the loop if the 'q' key is pressed
-    if cv2.waitKey(100) & 0xFF == ord('q'):
+    if cv2.waitKey(10) & 0xFF == ord('q'):
         break
 
 # Release the video capture and close all windows
